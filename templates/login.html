@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+	.tip {
+		margin-right: 320px;
+	}
+
+	#login {
+		width: 400px;
+		margin: 0 auto;
+		padding: 30px;
+		border: 2px solid #ccc;
+		border-radius: 10px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		text-align: center;
+		background-color: #f9f9f9;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	#login p {
+		margin-bottom: 20px;
+		font-size: 24px;
+		color: #333;
+	}
+	
+	#login input[type="text"],
+	#login input[type="password"] {
+		width: 100%;
+		padding: 10px;
+		margin-bottom: 20px;
+		border: 2px solid #ccc;
+		border-radius: 5px;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+		font-size: 16px;
+		color: #333;
+	}
+	
+	#login button {
+		width: 100%;
+		padding: 10px;
+		background-color: #4CAF50;
+		color: white;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 18px;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	}
+	
+	#login button:hover {
+		background-color: #45a049;
+	}
+	
+	</style>
+	
+	<form action="/login" method="post">
+		<div id="login" style="margin-top: 200px;">
+			<p align="center">登录</p>
+			<div class="tip">用户名：</div>
+			<input id="username" type="text" name="username"/>
+			<div class="tip">密码：</div>
+			<input id="password" type="password" name="password" />
+			<button type="submit">登录</button>
+		</div>
+	</form>
+{% endblock %}
