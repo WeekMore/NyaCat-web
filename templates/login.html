@@ -1,10 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 <style>
-	.tip {
-		margin-right: 320px;
-	}
-
 	#login {
 		width: 400px;
 		margin: 0 auto;
@@ -53,16 +49,44 @@
 		background-color: #45a049;
 	}
 	
+	#reg {
+		color: #47b9ff;
+	}
+	
+    .tip {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5px;
+        font-size: 16px;
+        color: #333;
+    }
+	
+	.remember-me {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .remember-me input[type="checkbox"] {
+        margin-right: 10px;
+    }
+	
 	</style>
 	
 	<form action="/login" method="post">
 		<div id="login" style="margin-top: 200px;">
 			<p align="center">登录</p>
 			<div class="tip">用户名：</div>
-			<input id="username" type="text" name="username"/>
+			<input id="username" type="text" name="username" required />
 			<div class="tip">密码：</div>
-			<input id="password" type="password" name="password" />
+			<input id="password" type="password" name="password" required/>
+            <div class="remember-me">
+                <input id="uap" type="checkbox" name="remember">
+                <label for="uap">记住登录？</label>
+            </div>
 			<button type="submit">登录</button>
+			<div>没有账号？<a id="reg" href="/reg">点我注册NyaID</a></div>
 		</div>
 	</form>
 {% endblock %}
